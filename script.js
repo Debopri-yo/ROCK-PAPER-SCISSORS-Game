@@ -1,5 +1,11 @@
 let humanScore = 0;
 let computerScore = 0;
+function scoreReset(){
+   humanScore = 0;
+   computerScore = 0;
+  document.getElementById("result").textContent="Human: 0, Computer: 0";
+  document.getElementById("score").textContent="new game started";
+}
 function   getComputerChoice() {
     let choice = Math.floor(Math.random() * 3 +1);
     if(choice===1) {
@@ -40,3 +46,4 @@ function playRoundWithUi(humanChoice){
         document.getElementById("result").textContent += " " + finalMessage;
   }
 }
+document.getElementById("newGame").addEventListener("click",()=>{scoreReset();});
